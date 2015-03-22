@@ -41,7 +41,7 @@
             <EditText
                 android:id="@+id/signup_name"
                 style="@style/txt_white"
-
+                android:text=""
                 android:layout_width="@dimen/signup_elements_width"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/pad_15dp"
@@ -51,6 +51,7 @@
 
             <EditText
                 android:id="@+id/signup_phoneNo"
+                android:text=""
                 android:inputType="phone"
                 style="@style/txt_white"
                 android:layout_width="@dimen/signup_elements_width"
@@ -62,6 +63,7 @@
 
             <EditText
                 android:id="@+id/signup_emailAddress"
+
                 android:inputType="textWebEmailAddress"
                 style="@style/txt_white"
                 android:layout_width="@dimen/signup_elements_width"

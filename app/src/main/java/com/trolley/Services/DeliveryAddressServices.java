@@ -31,11 +31,14 @@ public class DeliveryAddressServices {
             deliveryObject.put("flat", address.getFlat());
             deliveryObject.put("location",address.getLocality());
             deliveryObject.put("apartment",address.getApartment());
-            deliveryObject.saveInBackground((exception) -> {
-                if (exception == null) {
-                    Toast.makeText(this.activity, CONSTS.DELIVERY_ADDRESS_ADDED, Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this.activity, CONSTS.DELIVERY_ADDRESS_FAILED_TO_ADD, Toast.LENGTH_LONG).show();
+            deliveryObject.saveInBackground(new SaveCallback() {
+                @Override
+                public void done(ParseException exception) {
+                    if (exception == null) {
+                        Toast.makeText(DeliveryAddressServices.this.activity, CONSTS.DELIVERY_ADDRESS_ADDED, Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(DeliveryAddressServices.this.activity, CONSTS.DELIVERY_ADDRESS_FAILED_TO_ADD, Toast.LENGTH_LONG).show();
+                    }
                 }
             });
         } else {

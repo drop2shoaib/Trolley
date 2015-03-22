@@ -20,7 +20,6 @@ import com.trolley.custom.CustomActivity;
 import com.trolley.model.Data;
 import com.trolley.ui.About;
 import com.trolley.ui.AddCart;
-import com.trolley.ui.SignUp;
 import com.trolley.ui.LeftNavAdapter;
 import com.trolley.ui.RestaurantDetail;
 import com.trolley.ui.Restaurants;
@@ -156,8 +155,8 @@ public class MainActivity extends CustomActivity
 		if (pos == 0)
 		{
 			title = "Eatin";
-			f = new SignUp();
-			f.setArguments(null);
+//			f = new SignUp();
+//			f.setArguments(null);
 		}
 		else if (pos == 1)
 		{

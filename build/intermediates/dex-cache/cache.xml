@@ -16,6 +16,13 @@
         <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\classes-1e17f03d175c4d096085810d8ab2492bc18f3b93.jar" />
     </item>
     <item
+        jar="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-5e54271d489e3489be01d6b64c22c55a206ab38f.jar" />
+    </item>
+    <item
         jar="C:\Users\sunny\Documents\workspace\Trolley\libs\Parse-1.8.4.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -23,11 +30,18 @@
         <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\Parse-1.8.4-533497c94300118204b6b9f39d262e63c79c74bb.jar" />
     </item>
     <item
-        jar="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jar="C:\Users\sunny\.gradle\caches\modules-2\files-2.1\javax.mail\mail\1.4\1aa1579ae5ecd41920c4f355b0a9ef40b68315dd\mail-1.4.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-5e54271d489e3489be01d6b64c22c55a206ab38f.jar" />
+        sha1="1aa1579ae5ecd41920c4f355b0a9ef40b68315dd">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\mail-1.4-3a7dd96245e687f45ecebda9a6d9ae6d4c27c042.jar" />
+    </item>
+    <item
+        jar="C:\Users\sunny\.gradle\caches\modules-2\files-2.1\javax.activation\activation\1.1\e6cb541461c2834bdea3eb920f1884d1eb508b50\activation-1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e6cb541461c2834bdea3eb920f1884d1eb508b50">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\activation-1.1-e089700c60e586088c49726a38a5a62125c50280.jar" />
     </item>
     <item
         jar="C:\Users\sunny\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"

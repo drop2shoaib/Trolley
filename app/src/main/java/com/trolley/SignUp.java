@@ -1,5 +1,6 @@
-package com.trolley.ui;
+package com.trolley;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.trolley.R;
 import com.trolley.Services.UserServices;
 import com.trolley.custom.CustomFragment;
 import com.trolley.model.User;
@@ -21,7 +21,7 @@ import com.trolley.utils.InputValidation;
  * You need to write actual code for searching the contents based on the address
  * entered by user.
  */
-public class SignUp extends CustomFragment {
+public class SignUp extends Activity implements View.OnClickListener {
 
     /* (non-Javadoc)
      * @see android.support.v4.app.Fragment#onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
@@ -29,7 +29,7 @@ public class SignUp extends CustomFragment {
 
     private EditText nameElement, emailElement, passwordElement, phoneElement, flatElement, apartmentElement, localityElement;
 
-    private void initializeVariables(View view) {
+    private void initializeVariables(Activity view) {
         this.nameElement = (EditText) view.findViewById(R.id.signup_name);
         this.phoneElement = (EditText) view.findViewById(R.id.signup_phoneNo);
         this.passwordElement = (EditText) view.findViewById(R.id.signup_password);
@@ -40,21 +40,29 @@ public class SignUp extends CustomFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.signup, null);
-        this.initializeVariables(view);
-        setTouchNClick(view.findViewById(R.id.signup_register));
-        setTouchNClick(view.findViewById(R.id.signup_sign));
-        return view;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.setContentView(R.layout.signup);
+        this.initializeVariables(this);
+        findViewById(R.id.signup_register).setOnClickListener(this);
+        findViewById(R.id.signup_sign).setOnClickListener(this);
     }
+
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.signup, null);
+//        this.initializeVariables(view);
+//        view.findViewById(R.id.signup_register).setOnClickListener(this);
+//        view.findViewById(R.id.signup_sign).setOnClickListener(this);
+//        return view;
+//    }
 
     /* (non-Javadoc)
      * @see com.trolley.custom.CustomFragment#onClick(android.view.View)
      */
     @Override
     public void onClick(View view) {
-        super.onClick(view);
         switch (view.getId()) {
             case R.id.signup_register:
                 try {
@@ -95,4 +103,7 @@ public class SignUp extends CustomFragment {
     }
 
 
+    public Activity getActivity() {
+        return this;
+    }
 }
