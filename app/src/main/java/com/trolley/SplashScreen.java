@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.parse.Parse;
+import com.trolley.utils.ApiKeys;
 
 /**
  * The Class SplashScreen will launched at the start of the application. It will
@@ -21,19 +22,21 @@ public class SplashScreen extends Activity
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
+
+    private void initializeParse(){
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, ApiKeys.APPLICATION_ID, ApiKeys.CLIENT_ID);
+    }
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
-// Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "bRoXWb6XgqDg6fMneq6srA4AaYs1UZ1LRBxqwERW", "hx13YeCRisLvo6hsD0nRbIcev5irsKDJ1VVCsLr1");
+        initializeParse();
         isRunning = true;
-
 		startSplash();
-
 	}
 
 	/**
@@ -47,12 +50,9 @@ public class SplashScreen extends Activity
 			@Override
 			public void run()
 			{
-
 				try
 				{
-
 					Thread.sleep(3000);
-
 				} catch (Exception e)
 				{
 					e.printStackTrace();
@@ -76,13 +76,12 @@ public class SplashScreen extends Activity
 	 */
 	private synchronized void doFinish()
 	{
-
 		if (isRunning)
 		{
 			isRunning = false;
-			Intent i = new Intent(SplashScreen.this, MainActivity.class);
-			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			startActivity(i);
+			Intent intent = new Intent(SplashScreen.this, Home.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
 			finish();
 		}
 	}
