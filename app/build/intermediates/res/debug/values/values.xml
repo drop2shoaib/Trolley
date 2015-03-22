@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/sunny/Documents/workspace/Trolley/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="black">#000000</color>
+    <color name="gray_cart">#e6ecf4</color>
+    <color name="gray_light">#a1a1a1</color>
+    <color name="main_color_gray">#b2b2b2</color>
+    <color name="main_color_gray_dk">#292929</color>
+    <color name="main_color_gray_lt">#e5e5e5</color>
+    <color name="main_color_red">#9a1000</color>
+    <color name="main_color_red_dk">#711307</color>
+    <color name="main_color_yellow">#ffc600</color>
+    <color name="red">#f14242</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_smoke">#F7F7F7</color>
+    <color name="white_smoke_dk">#f3f2f2</color>
+    <!-- From: file:/C:/Users/sunny/Documents/workspace/Trolley/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="divider">0.75dp</dimen>
+    <dimen name="pad_10dp">10dp</dimen>
+    <dimen name="pad_125dp">125dp</dimen>
+    <dimen name="pad_15dp">15dp</dimen>
+    <dimen name="pad_1dp">1dp</dimen>
+    <dimen name="pad_20dp">20dp</dimen>
+    <dimen name="pad_30dp">30dp</dimen>
+    <dimen name="pad_3dp">3dp</dimen>
+    <dimen name="pad_5dp">5dp</dimen>
+    <dimen name="pad_8dp">8dp</dimen>
+    <dimen name="signup_elements_width">320sp</dimen>
+    <dimen name="txt_12sp">12sp</dimen>
+    <dimen name="txt_13sp">13sp</dimen>
+    <dimen name="txt_14sp">14sp</dimen>
+    <dimen name="txt_15sp">15sp</dimen>
+    <dimen name="txt_16sp">16sp</dimen>
+    <dimen name="txt_18sp">18sp</dimen>
+    <dimen name="txt_20sp">20sp</dimen>
+    <dimen name="txt_25sp">25sp</dimen>
+    <dimen name="txt_7sp">7sp</dimen>
+    <!-- From: file:/C:/Users/sunny/Documents/workspace/Trolley/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="about_text">Food is any substance[1] consumed to provide nutritional support for the body. It is usually of plant or animal origin, and contains essential nutrients, such as carbohydrates, fats, proteins, vitamins, or minerals. The substance is ingested by an organism and assimilated by the organism\'s cells in an effort to produce energy, maintain life, or stimulate growth.\n\nHistorically, people secured food through two methods: hunting and gathering, and agriculture. Today, most of the food energy consumed by the world population is supplied by the food industry.\n\nFood safety and food security are monitored by agencies like the International Association for Food Protection, World Resources Institute, World Food Programme, Food and Agriculture Organization, and International Food Information Council. They address issues such as sustainability, biological diversity, climate change, nutritional economics, population growth, water supply, and access to food.\n\nThe right to food is a human right derived from the International Covenant on Economic, Social and Cultural Rights (ICESCR), recognizing the "right to an adequate standard of living, including adequate food," as well as the "fundamental right to be free from hunger."</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="apartment">Enter Apartment</string>
+    <string name="app_name">Trolley</string>
+    <string name="checkout">Checkout</string>
+    <string name="coupon">Coupon</string>
+    <string name="distance">Distance</string>
+    <string name="drawer_close">Close</string>
+    <string name="drawer_open">Open</string>
+    <string name="enter_address">Enter your address</string>
+    <string name="enter_apartment">Enter Apartment</string>
+    <string name="enter_email_address">Email is necessary</string>
+    <string name="enter_flat">Flat No Please</string>
+    <string name="enter_locality">Enter locality</string>
+    <string name="enter_name">Your Name Please</string>
+    <string name="enter_password">Password ?</string>
+    <string name="enter_phone">Need a Number</string>
+    <string name="free_dis">Free Delivery</string>
+    <string name="full_menu">Full Menu</string>
+    <string name="hungry">HUNGRY?</string>
+    <string name="menu">Menu</string>
+    <string name="minimum">Minimum</string>
+    <string name="most_pop">Most Popular</string>
+    <string name="newest">Newest</string>
+    <string name="order_now">ORDER NOW</string>
+    <string name="popular">Popular</string>
+    <string name="register">Register</string>
+    <string name="register_now">Register Now</string>
+    <string name="start_order">START YOUR ORDER</string>
+    <!-- From: file:/C:/Users/sunny/Documents/workspace/Trolley/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar"/>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:homeAsUpIndicator">@drawable/ic_back</item>
+    </style>
+    <style name="btn" parent="android:Widget.Holo.Light.Button">
+        <item name="android:minHeight">1dp</item>
+        <item name="android:minWidth">1dp</item>
+    </style>
+    <style name="tab_btn" parent="@style/btn">
+        <item name="android:background">@drawable/btn_tab</item>
+        <item name="android:textColor">@color/tab_color</item>
+        <item name="android:textSize">@dimen/txt_13sp</item>
+        <item name="android:paddingBottom">@dimen/pad_5dp</item>
+        <item name="android:paddingLeft">@dimen/pad_5dp</item>
+        <item name="android:paddingRight">@dimen/pad_5dp</item>
+    </style>
+    <style name="tab_divider">
+        <item name="android:background">@color/gray_light</item>
+        <item name="android:layout_marginBottom">@dimen/pad_10dp</item>
+        <item name="android:layout_marginTop">@dimen/pad_10dp</item>
+    </style>
+    <style name="txt_white" parent="android:Widget.Holo.Light.EditText">
+        <item name="android:background">@color/white</item>
+        <item name="android:ems">10</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:padding">@dimen/pad_8dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/gray_light</item>
+        <item name="android:textSize">@dimen/txt_16sp</item>
+    </style>
+</resources>
