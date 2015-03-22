@@ -35,5 +35,4 @@ build
 *.ipr
 *~
 *.swp
-
 app/build/*
