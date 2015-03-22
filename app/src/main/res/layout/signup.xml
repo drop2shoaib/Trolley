@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hungry"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_18sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_now"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_25sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/pad_15dp"
+            android:layout_marginTop="@dimen/pad_15dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/pad_15dp"
+            android:paddingRight="@dimen/pad_15dp">
+
+            <EditText
+                android:id="@+id/signup_name"
+                style="@style/txt_white"
+
+                android:layout_width="@dimen/signup_elements_width"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_15dp"
+                android:hint="@string/enter_name">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/signup_phoneNo"
+                android:inputType="phone"
+                style="@style/txt_white"
+                android:layout_width="@dimen/signup_elements_width"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_15dp"
+                android:hint="@string/enter_phone">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/signup_emailAddress"
+                android:inputType="textWebEmailAddress"
+                style="@style/txt_white"
+                android:layout_width="@dimen/signup_elements_width"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_15dp"
+                android:hint="@string/enter_email_address">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/signup_password"
+                android:inputType="textPassword"
+                style="@style/txt_white"
+                android:layout_width="@dimen/signup_elements_width"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_15dp"
+                android:hint="@string/enter_password">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/signup_Locality"
+                style="@style/txt_white"
+                android:layout_width="@dimen/signup_elements_width"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_15dp"
+                android:hint="@string/enter_locality">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/signup_Apartment"
+                style="@style/txt_white"
+                android:layout_width="@dimen/signup_elements_width"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_15dp"
+                android:hint="@string/enter_apartment">
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/signup_flat"
+                style="@style/txt_white"
+                android:layout_width="@dimen/signup_elements_width"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_flat"
+
+                >
+
+                <requestFocus />
+            </EditText>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/signup_register"
+        style="@style/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_red"
+        android:text="@string/register"
+        android:layout_marginBottom="@dimen/pad_10dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/signup_sign"
+        android:textSize="@dimen/pad_15dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/already_a_member" />
+
+</LinearLayout>

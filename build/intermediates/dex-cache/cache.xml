@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\sunny\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-959e59d9249715ffdcdc6b86e749723c10262260.jar" />
+    </item>
+    <item
+        jar="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\classes-1e17f03d175c4d096085810d8ab2492bc18f3b93.jar" />
+    </item>
+    <item
+        jar="C:\Users\sunny\Documents\workspace\Trolley\libs\Parse-1.8.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0fcb6bbc9cf6d2643a90c812539aa82ed16ea315">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\Parse-1.8.4-533497c94300118204b6b9f39d262e63c79c74bb.jar" />
+    </item>
+    <item
+        jar="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-5e54271d489e3489be01d6b64c22c55a206ab38f.jar" />
+    </item>
+    <item
+        jar="C:\Users\sunny\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="C:\Users\sunny\Documents\workspace\Trolley\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-4d44df7f616e7abbe66a9470fd1d2b233b5de8b6.jar" />
+    </item>
+
+</items>
