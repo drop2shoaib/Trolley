@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/img_cart"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView1"
+            android:background="@drawable/black_semi_trans_strip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/pad_10dp" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+                <Button
+                    android:id="@+id/pickup"
+                    style="@style/btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/user" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageView1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/pad_10dp" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/lbl1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mr. Vamsi Krishna"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lbl3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Flat No. 1608, Yarrow Building, Nahar Amrit Shakti"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$25"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txt_16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_color_red"
+        android:gravity="center_vertical"
+        android:padding="@dimen/pad_15dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GROCERIES DELIVERED \nRIGHT TO YOUR DOORSTEP WITHIN MINUTES"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_15sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_color_red"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color_red"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/pad_10dp"
+            android:padding="@dimen/pad_20dp"
+            android:layout_gravity="top"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/pickup1"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/info"
+
+                />
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Info"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_15sp"
+                android:layout_marginBottom="@dimen/pad_30dp"/>
+
+            <Button
+                android:id="@+id/deliver1"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/location" />
+            <TextView
+                android:id="@+id/transactions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transactions"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_15sp"
+                android:layout_marginBottom="@dimen/pad_30dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color_red"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/pad_30dp"
+            android:layout_marginLeft="@dimen/pad_20dp"
+            android:layout_gravity="top"
+            android:weightSum="3"
+            android:id="@+id/requestTrolley">
+
+            <Button
+                android:id="@+id/requestTrolleyButton"
+                style="@style/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cart"
+                android:layout_marginBottom="@dimen/pad_15dp"/>
+            <TextView
+                android:id="@+id/requestTrolleyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request Trolley"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color_red"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/pad_30dp"
+            android:layout_marginLeft="@dimen/pad_20dp"
+            android:layout_gravity="top"
+            android:weightSum="3"
+            android:id="@+id/confirmTrolley"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/main_color_red"
+                android:gravity="center"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/confirmTrolleyButton"
+                    style="@style/btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/confirm"
+                    android:layout_marginBottom="@dimen/pad_15dp"/>
+                <TextView
+                    android:id="@+id/confirmTrolleyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/main_color_red"
+                android:gravity="center"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/cancelTrolleyButton"
+                    style="@style/btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cancel"
+                    android:layout_marginBottom="@dimen/pad_15dp"/>
+                <TextView
+                    android:id="@+id/cancelTrolleyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

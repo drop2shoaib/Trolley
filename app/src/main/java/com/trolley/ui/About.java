@@ -24,6 +24,7 @@ public class About extends CustomFragment
 			Bundle savedInstanceState)
 	{
 		View v = inflater.inflate(R.layout.about, null);
+        
 
 		return v;
 	}
