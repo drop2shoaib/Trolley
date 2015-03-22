@@ -11,6 +11,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.parse.SignUpCallback;
 import com.trolley.model.User;
 
 import org.json.JSONException;
@@ -37,13 +38,13 @@ public class UserServices {
             userOBJ.setEmail( user.getEmail());
             userOBJ.put("name", user.getName());
             userOBJ.put("phone", user.getPhone());
-            userOBJ.saveInBackground(new SaveCallback() {
+            userOBJ.signUpInBackground(new SignUpCallback() {
                 @Override
                 public void done(ParseException exception) {
-                    if(exception==null){
+                    if (exception == null) {
                         Toast.makeText(UserServices.this.activity, "SuccessFul", Toast.LENGTH_LONG).show();
-                    }
-                    else {
+
+                    } else {
                         Toast.makeText(UserServices.this.activity, "UnSuccessFul", Toast.LENGTH_LONG).show();
                     }
                 }
