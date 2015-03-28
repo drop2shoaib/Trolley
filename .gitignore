@@ -36,3 +36,5 @@ build
 *~
 *.swp
 app/build/*
+
+!build/intermediates
