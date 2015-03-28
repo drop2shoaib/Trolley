@@ -20,4 +20,5 @@ public class CONSTS {
     public static final String NO_INTERNET_AVAILABLE ="Not connected to internet" ;
     public static final String LOGGED_IN_SUCCESSFULLY ="Logged in successfully" ;
     public static final String LOGGING_FAILED = "Logging in failed";
+    public static final String SIGNUP_FAILED ="Sign Up Failed" ;
 }

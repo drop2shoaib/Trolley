@@ -59,4 +59,19 @@
         android:layout_marginBottom="@dimen/pad_10dp"
         android:textColor="@color/white"
         android:textSize="@dimen/txt_18sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/signin_signup"
+        android:textSize="@dimen/pad_15dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/not_a_memeber" />
+    <ProgressBar
+        android:id="@+id/login_Progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
 </LinearLayout>
+

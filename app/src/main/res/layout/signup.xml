@@ -14,14 +14,28 @@
         android:textColor="@color/white"
         android:textSize="@dimen/txt_18sp" />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_now"
         android:textColor="@color/white"
         android:textSize="@dimen/txt_25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold" />-->
+    <ProgressBar
+        android:id="@+id/signup_progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/signup_sign"
+        android:textSize="@dimen/pad_15dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/already_a_member" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -85,7 +99,7 @@
             </EditText>
 
             <EditText
-                android:id="@+id/signup_Locality"
+                android:id="@+id/signup_locality"
                 style="@style/txt_white"
                 android:layout_width="@dimen/signup_elements_width"
                 android:layout_height="wrap_content"
@@ -95,7 +109,7 @@
             </EditText>
 
             <EditText
-                android:id="@+id/signup_Apartment"
+                android:id="@+id/signup_apartment"
                 style="@style/txt_white"
                 android:layout_width="@dimen/signup_elements_width"
                 android:layout_height="wrap_content"
@@ -130,12 +144,6 @@
         android:textColor="@color/white"
         android:textSize="@dimen/txt_18sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/signup_sign"
-        android:textSize="@dimen/pad_15dp"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:text="@string/already_a_member" />
+
 
 </LinearLayout>
