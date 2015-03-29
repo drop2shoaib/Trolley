@@ -1,15 +1,18 @@
 package com.trolley;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,11 +20,15 @@ import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.GetCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.trolley.model.DeliveryAddress;
+import com.trolley.model.User;
+import com.trolley.ui.EditUserDetailsDialog;
 import com.trolley.utils.CONSTS;
 
 import java.util.List;
@@ -29,7 +36,8 @@ import java.util.List;
 /**
  * Created by sunny on 22/3/2015.
  */
-public class Home extends ActionBarActivity implements View.OnClickListener {
+public class Home extends ActionBarActivity implements View.OnClickListener, EditUserDetailsDialog.EditUserDetailDialogListener {
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu items for use in the action bar
@@ -124,7 +132,7 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
                         .show();
                 break;
             case R.id.home_user_edit:
-
+                showEditDialog();
                 break;
         }
 
@@ -219,6 +227,7 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
     private void showUserDetails() {
         this.userFullName.setVisibility(View.VISIBLE);
         this.userAddress.setVisibility(View.VISIBLE);
+        this.userEditButton.setVisibility(View.VISIBLE);
         this.userDetailsProgressBar.setVisibility(View.GONE);
     }
 
@@ -228,6 +237,7 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
 
         this.userFullName.setVisibility(View.GONE);
         this.userAddress.setVisibility(View.GONE);
+        this.userEditButton.setVisibility(View.GONE);
         this.userDetailsProgressBar.setVisibility(View.VISIBLE);
     }
 
@@ -259,7 +269,8 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
         String location = (String) addressParseObject.get("location");
         String apartment = (String) addressParseObject.get("apartment");
         String flat = (String) addressParseObject.get("flat");
-        String address = flat + "," + apartment + "," + location;
+        String address = flat + "," + apartment + "," + location+"\n"+ParseUser.getCurrentUser().get("phone");
+
         return address;
     }
 
@@ -277,5 +288,52 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
         startActivity(new Intent(this, LogIn.class));
         finish();
     }
-    
+
+    private void showEditDialog() {
+        FragmentManager fm = getFragmentManager();
+        EditUserDetailsDialog editNameDialog = new EditUserDetailsDialog();
+        Bundle args=new Bundle();
+        args.putString("flat",addressParseObject.get("flat").toString());
+        args.putString("apartment",addressParseObject.get("apartment").toString());
+        args.putString("locality", addressParseObject.get("location").toString());
+        editNameDialog.setArguments(args);
+        editNameDialog.show(fm, "edit_user_info_dialog");
+    }
+
+    @Override
+    public void onFinishEditDialog(final User user, final DeliveryAddress deliveryAddress) {
+        this.loadingUserDetails();
+        ParseUser. getCurrentUser().put("phone", user.getPhone());
+        ParseUser. getCurrentUser().put("name", user.getName());
+        try {
+            ParseUser.getCurrentUser().save();
+            this.setUserDetails(ParseUser.getCurrentUser());
+            this.updateAddressDetails(deliveryAddress);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void updateAddressDetails(final DeliveryAddress deliveryAddressParam) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("DeliveryAddress");
+        // Retrieve the object by id
+        query.getInBackground(this.addressParseObject.getObjectId(), new GetCallback<ParseObject>() {
+            public void done(ParseObject deliveryObject, ParseException e) {
+                if (e == null) {
+                    deliveryObject.put("flat", deliveryAddressParam.getFlat());
+                    deliveryObject.put("apartment",deliveryAddressParam.getApartment() );
+                    deliveryObject.put("location", deliveryAddressParam.getLocality());
+                    deliveryObject.saveInBackground();
+                    Home.this.setAddressDetails(deliveryObject);
+                    Toast.makeText(Home.this, CONSTS.USER_DETAILS_UPDATED_SUCCESSFULLY, Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(Home.this, CONSTS.USER_DETAILS_FAILED_TO_UPDATE, Toast.LENGTH_LONG).show();
+
+                }
+                Home.this.showUserDetails();
+            }
+        });
+    }
 }
