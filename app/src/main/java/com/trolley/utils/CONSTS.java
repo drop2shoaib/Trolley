@@ -37,4 +37,9 @@ public class CONSTS {
     public static final String ORDER_FAILED_TO_CANCELLED = "Order Failed to cancel";
     public static final String ORDER_WILL_BE_DELIVERED = "Order will be delivered at the below address," +
             "If you want to place at different address, then please change the address.\n\n\n";
+    public static final String CANCEL ="Cancel" ;
+    public static final String EDIT_USER_INFO_TITLE ="Edit Details" ;
+    public static final String USER_DETAILS_UPDATED_SUCCESSFULLY = "User Details Update Successfully";
+    public static final String USER_DETAILS_FAILED_TO_UPDATE = "User Details failed to update";
+    public static String UPDATE="Update";
 }

@@ -3,17 +3,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:scaleType="center"
-        android:background="#FFFFBB33"
-        android:contentDescription="@string/app_name" />
-
     <EditText
         android:id="@+id/edit_user_name"
-        android:style="@style/txt_white"
-        android:text=""
+        style="@style/txt_white"
         android:layout_width="@dimen/signup_elements_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -21,6 +13,18 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp"
         android:hint="@string/enter_name" />
+
+    <EditText
+        android:id="@+id/edit_user_phone"
+        android:inputType="phone"
+        style="@style/txt_white"
+        android:layout_width="@dimen/signup_elements_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/enter_phone" />
 
     <EditText
         android:id="@+id/edit_user_locality"
@@ -59,8 +63,17 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="16dp"
 
-        >
+        />
 
+    <Button
+        android:id="@+id/edit_user_update"
+        android:text="@string/update_details"
+        android:layout_width="@dimen/signup_elements_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp">
 
-    </EditText>
+    </Button>
 </LinearLayout>
