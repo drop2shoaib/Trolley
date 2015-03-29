@@ -38,7 +38,6 @@ public class UserServices {
             userOBJ.setEmail( user.getEmail());
             userOBJ.put("name", user.getName());
             userOBJ.put("phone", user.getPhone());
-            this.activity.stop
             userOBJ.signUpInBackground(new SignUpCallback() {
                 @Override
                 public void done(ParseException exception) {

@@ -75,6 +75,8 @@ public class SignUp extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.signup_register:
+                if (!MyNetworkInfo.checkConnection(this))
+                    return;
                 try {
                     this.validateInputValues();
 
@@ -83,9 +85,7 @@ public class SignUp extends Activity implements View.OnClickListener {
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                     return;
                 }
-                this.addUserAccount(this.createUser());
-                this.addDeliveryAddress(this.createDeliveryAddress());
-
+                this.addDetails(this.createUser(), this.createDeliveryAddress());
                 break;
             case R.id.signup_sign:
                 startActivity(new Intent(getActivity(), LogIn.class)
@@ -125,68 +125,54 @@ public class SignUp extends Activity implements View.OnClickListener {
         return new User(userName, phone, email, password, true);
     }
 
-    public void addUserAccount(User user) {
-        //            object.put("emailVerified", user.isEmailVerified());
-        ConnectivityManager connMgr = (ConnectivityManager)
-                this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
-            ParseUser userOBJ = new ParseUser();
-            userOBJ.setUsername(user.getEmail());
-            userOBJ.setPassword(user.getPassword());
-            userOBJ.setEmail(user.getEmail());
-            userOBJ.put("name", user.getName());
-            userOBJ.put("phone", user.getPhone());
-            this.startSpinner();
-            userOBJ.signUpInBackground(new SignUpCallback() {
-                @Override
-                public void done(ParseException exception) {
-                    if (exception == null) {
-//                        Toast.makeText(SignUp.this, "SuccessFul", Toast.LENGTH_LONG).show();
+    public void addDetails(User user, final DeliveryAddress deliveryAddress) {
 
-                    } else {
-                        Toast.makeText(SignUp.this, CONSTS.SIGNUP_FAILED, Toast.LENGTH_LONG).show();
-                    }
-                }
 
-            });
-        } else {
-            Toast.makeText(SignUp.this, CONSTS.NO_INTERNET_AVAILABLE, Toast.LENGTH_LONG).show();
+        if (ParseUser.getCurrentUser() != null) {
+            this.addDeliveryAddress(deliveryAddress);
         }
+        //Adding User Account
+        ParseUser userOBJ = new ParseUser();
+        userOBJ.setUsername(user.getEmail());
+        userOBJ.setPassword(user.getPassword());
+        userOBJ.setEmail(user.getEmail());
+        userOBJ.put("name", user.getName());
+        userOBJ.put("phone", user.getPhone());
+        this.startSpinner();
+        userOBJ.signUpInBackground(new SignUpCallback() {
+            @Override
+            public void done(ParseException exception) {
+                if (exception == null) {
+                    SignUp.this.addDeliveryAddress(deliveryAddress);
+                } else {
+//                        Toast.makeText(SignUp.this, CONSTS.SIGNUP_FAILED, Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignUp.this, exception.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
 
+        });
     }
 
     public void addDeliveryAddress(DeliveryAddress address) {
 
-        ConnectivityManager connMgr = (ConnectivityManager)
-                this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
-            if (ParseUser.getCurrentUser() == null) {
-//                Toast.makeText(SignUp.this, CONSTS., Toast.LENGTH_LONG).show();
-                return;
-            }
-            ParseObject deliveryObject = new ParseObject("DeliveryAddress");
-            deliveryObject.put("user", ParseUser.getCurrentUser());
-            deliveryObject.put("flat", address.getFlat());
-            deliveryObject.put("location", address.getLocality());
-            deliveryObject.put("apartment", address.getApartment());
-            deliveryObject.saveInBackground(new SaveCallback() {
-                @Override
-                public void done(ParseException exception) {
-                    if (exception == null) {
+        ParseObject deliveryObject = new ParseObject("DeliveryAddress");
+        deliveryObject.put("user", ParseUser.getCurrentUser());
+        deliveryObject.put("flat", address.getFlat());
+        deliveryObject.put("location", address.getLocality());
+        deliveryObject.put("apartment", address.getApartment());
+        deliveryObject.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException exception) {
+                SignUp.this.stopSpinner();
+                if (exception == null) {
 //                        Toast.makeText(SignUp.this, CONSTS.DELIVERY_ADDRESS_ADDED, Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(getActivity(), Home.class));
-                        finish();
-                    } else {
-//                        Toast.makeText(SignUp.this, CONSTS.DELIVERY_ADDRESS_FAILED_TO_ADD, Toast.LENGTH_LONG).show();
-                    }
+                    startActivity(new Intent(getActivity(), Home.class));
+                    finish();
+                } else {
+                    Toast.makeText(SignUp.this, CONSTS.DELIVERY_ADDRESS_FAILED_TO_ADD, Toast.LENGTH_LONG).show();
                 }
-            });
-        } else {
-            Toast.makeText(this, CONSTS.NO_INTERNET_AVAILABLE, Toast.LENGTH_LONG).show();
-        }
-
+            }
+        });
     }
 
     public Activity getActivity() {

@@ -23,6 +23,7 @@ public class LogIn extends Activity implements View.OnClickListener {
     private Button signIn;
     private TextView signUp;
     private ProgressBar spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,30 +40,34 @@ public class LogIn extends Activity implements View.OnClickListener {
         this.signIn.setOnClickListener(this);
         this.signUp = (TextView) view.findViewById(R.id.signin_signup);
         this.signUp.setOnClickListener(this);
-        this.spinner= (ProgressBar) view.findViewById(R.id.login_Progress_bar);
+        this.spinner = (ProgressBar) view.findViewById(R.id.login_Progress_bar);
         stopSpinner();
     }
 
-    private void startSpinner(){
-       this.spinner.setVisibility(View.VISIBLE);
+    private void startSpinner() {
+        this.spinner.setVisibility(View.VISIBLE);
     }
-    private void stopSpinner(){
+
+    private void stopSpinner() {
         this.spinner.setVisibility(View.GONE);
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signin_signit:
+                if (!MyNetworkInfo.checkConnection(this))
+                    return;
                 startSpinner();
+
                 ParseUser.logInInBackground(this.emailAddress.getText().toString(), this.password.getText().toString(), new LogInCallback() {
                     @Override
                     public void done(ParseUser user, ParseException exception) {
                         if (user != null) {
-//                            Toast.makeText(LogIn.this, CONSTS.LOGGED_IN_SUCCESSFULLY, Toast.LENGTH_LONG);
                             startActivity(new Intent(LogIn.this, Home.class));
                             finish();
                         } else {
-                            Toast.makeText(LogIn.this, CONSTS.LOGGING_FAILED, Toast.LENGTH_LONG).show();
+                            Toast.makeText(LogIn.this, exception.getMessage(), Toast.LENGTH_LONG).show();
                         }
                         stopSpinner();
                     }
