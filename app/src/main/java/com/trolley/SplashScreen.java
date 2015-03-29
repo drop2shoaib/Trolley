@@ -27,7 +27,7 @@ public class SplashScreen extends Activity {
 
     private void initializeParse() {
         // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
+//        Parse.enableLocalDatastore(this);
         Parse.initialize(this, ApiKeys.APPLICATION_ID, ApiKeys.CLIENT_ID);
     }
 

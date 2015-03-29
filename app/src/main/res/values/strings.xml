@@ -40,5 +40,8 @@
     <string name="action_logout">LogOut</string>
     <string name="action_about">About</string>
     <string name="not_a_memeber"><u>Not a Member, Please Sign Up</u></string>
+    <string name="home_cancel_order">Cancel Order</string>
+    <string name="yes">Yes</string>
+    <string name="order_confirmed_text">Your Request is confirmed. Please Contact 7208159273 for further details</string>
 
 </resources>

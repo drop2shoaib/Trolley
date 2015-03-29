@@ -22,4 +22,6 @@
 	<dimen name="divider">0.75dp</dimen>
     <dimen name="signup_elements_width">320sp</dimen>
     <dimen name="signin_elements_width">320sp</dimen>
+    <dimen name="pad_40dp">40dp</dimen>
+    <dimen name="pad_50dp">50dp</dimen>
 </resources>
