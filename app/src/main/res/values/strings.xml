@@ -43,5 +43,6 @@
     <string name="home_cancel_order">Cancel Order</string>
     <string name="yes">Yes</string>
     <string name="order_confirmed_text">Your Request is confirmed. Please Contact 7208159273 for further details</string>
+    <string name="update_details">Update Details</string>
 
 </resources>
